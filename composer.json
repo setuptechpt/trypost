@@ -56,6 +56,7 @@
         "predis/predis": "^3.3",
         "sendkit/sendkit-laravel": "^1.1",
         "simplepie/simplepie": "^1.9",
+        "socialiteproviders/authentik": "^5.3",
         "socialiteproviders/facebook": "^4.1",
         "socialiteproviders/instagram": "^5.1",
         "socialiteproviders/linkedin": "^5.0",
