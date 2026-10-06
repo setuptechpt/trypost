@@ -58,6 +58,9 @@ return [
     'github_login' => 'GitHub으로 로그인',
     'github_signup' => 'GitHub으로 가입하기',
     'github_email_unavailable' => 'GitHub에서 이메일을 가져올 수 없습니다. GitHub 이메일을 공개로 설정하거나 이메일 권한을 부여한 후 다시 시도하세요.',
+    'authentik_login' => ':provider(으)로 로그인',
+    'authentik_no_account' => '이 이메일로 등록된 TryPost 계정이 없습니다. 관리자에게 계정 생성을 요청하세요.',
+    'authentik_failed' => ':provider(으)로 로그인하지 못했습니다. 다시 시도해 주세요.',
 
     'login' => [
         'title' => '계정에 로그인',

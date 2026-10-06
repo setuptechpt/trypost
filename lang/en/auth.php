@@ -58,6 +58,9 @@ return [
     'github_login' => 'Log in with GitHub',
     'github_signup' => 'Sign up with GitHub',
     'github_email_unavailable' => 'Unable to retrieve your email from GitHub. Make your GitHub email public or grant the email scope, then try again.',
+    'authentik_login' => 'Log in with :provider',
+    'authentik_no_account' => 'No TryPost account exists for this email. Ask your administrator to create one.',
+    'authentik_failed' => 'We could not sign you in with :provider. Please try again.',
 
     'login' => [
         'title' => 'Log in to your account',

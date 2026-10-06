@@ -60,6 +60,9 @@ return [
     'github_login' => 'GitHub ile giriş yap',
     'github_signup' => 'GitHub ile kayıt ol',
     'github_email_unavailable' => 'GitHub\'dan e-postanız alınamadı. GitHub e-postanızı herkese açık yapın veya e-posta iznini verin, ardından tekrar deneyin.',
+    'authentik_login' => ':provider ile giriş yap',
+    'authentik_no_account' => 'Bu e-posta için bir TryPost hesabı yok. Yöneticinizden bir hesap oluşturmasını isteyin.',
+    'authentik_failed' => ':provider ile giriş yapılamadı. Lütfen tekrar deneyin.',
 
     'login' => [
         'title' => 'Hesabınıza giriş yapın',

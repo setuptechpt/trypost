@@ -58,6 +58,9 @@ return [
     'github_login' => 'Se connecter avec GitHub',
     'github_signup' => 'S\'inscrire avec GitHub',
     'github_email_unavailable' => 'Impossible de récupérer votre e-mail depuis GitHub. Rendez votre e-mail GitHub public ou accordez l\'autorisation d\'accès à l\'e-mail, puis réessayez.',
+    'authentik_login' => 'Se connecter avec :provider',
+    'authentik_no_account' => 'Aucun compte TryPost n\'existe pour cet e-mail. Demandez à votre administrateur d\'en créer un.',
+    'authentik_failed' => 'Impossible de vous connecter avec :provider. Veuillez réessayer.',
 
     'login' => [
         'title' => 'Connectez-vous à votre compte',

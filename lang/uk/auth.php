@@ -58,6 +58,9 @@ return [
     'github_login' => 'Увійти через GitHub',
     'github_signup' => 'Зареєструватися через GitHub',
     'github_email_unavailable' => 'Не вдалося отримати ваш email з GitHub. Зробіть email публічним або надайте доступ до email, потім спробуйте ще раз.',
+    'authentik_login' => 'Увійти через :provider',
+    'authentik_no_account' => 'Для цієї електронної адреси немає облікового запису TryPost. Попросіть адміністратора створити його.',
+    'authentik_failed' => 'Не вдалося увійти через :provider. Спробуйте ще раз.',
 
     'login' => [
         'title' => 'Увійдіть до облікового запису',

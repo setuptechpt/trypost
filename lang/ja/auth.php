@@ -58,6 +58,9 @@ return [
     'github_login' => 'GitHub でログイン',
     'github_signup' => 'GitHub で登録',
     'github_email_unavailable' => 'GitHub からメールアドレスを取得できませんでした。GitHub のメールアドレスを公開するか、email スコープを許可してから、もう一度お試しください。',
+    'authentik_login' => ':provider でログイン',
+    'authentik_no_account' => 'このメールアドレスの TryPost アカウントはありません。管理者にアカウントの作成を依頼してください。',
+    'authentik_failed' => ':provider でログインできませんでした。もう一度お試しください。',
 
     'login' => [
         'title' => 'アカウントにログイン',

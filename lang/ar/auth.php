@@ -58,6 +58,9 @@ return [
     'github_login' => 'تسجيل الدخول عبر GitHub',
     'github_signup' => 'التسجيل عبر GitHub',
     'github_email_unavailable' => 'تعذر جلب بريدك الإلكتروني من GitHub. اجعل بريدك على GitHub عامًا أو امنح نطاق الوصول إلى البريد، ثم حاول مرة أخرى.',
+    'authentik_login' => 'تسجيل الدخول عبر :provider',
+    'authentik_no_account' => 'لا يوجد حساب TryPost لهذا البريد الإلكتروني. اطلب من المسؤول إنشاء حساب.',
+    'authentik_failed' => 'تعذر تسجيل دخولك عبر :provider. يرجى المحاولة مرة أخرى.',
 
     'login' => [
         'title' => 'تسجيل الدخول إلى حسابك',

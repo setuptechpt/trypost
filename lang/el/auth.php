@@ -58,6 +58,9 @@ return [
     'github_login' => 'Σύνδεση με GitHub',
     'github_signup' => 'Εγγραφή με GitHub',
     'github_email_unavailable' => 'Δεν ήταν δυνατή η ανάκτηση του email σας από το GitHub. Κάντε δημόσιο το email σας στο GitHub ή παραχωρήστε το scope email και δοκιμάστε ξανά.',
+    'authentik_login' => 'Σύνδεση με :provider',
+    'authentik_no_account' => 'Δεν υπάρχει λογαριασμός TryPost για αυτό το email. Ζητήστε από τον διαχειριστή σας να δημιουργήσει έναν.',
+    'authentik_failed' => 'Δεν ήταν δυνατή η σύνδεση με :provider. Δοκιμάστε ξανά.',
 
     'login' => [
         'title' => 'Συνδεθείτε στον λογαριασμό σας',

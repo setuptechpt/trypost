@@ -58,6 +58,9 @@ return [
     'github_login' => 'Inloggen met GitHub',
     'github_signup' => 'Aanmelden met GitHub',
     'github_email_unavailable' => 'Kan je e-mailadres niet ophalen van GitHub. Maak je GitHub-e-mailadres openbaar of verleen de e-mailscope en probeer het opnieuw.',
+    'authentik_login' => 'Inloggen met :provider',
+    'authentik_no_account' => 'Er bestaat geen TryPost-account voor dit e-mailadres. Vraag je beheerder er een aan te maken.',
+    'authentik_failed' => 'Inloggen met :provider is mislukt. Probeer het opnieuw.',
 
     'login' => [
         'title' => 'Log in op je account',

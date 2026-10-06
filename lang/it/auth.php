@@ -58,6 +58,9 @@ return [
     'github_login' => 'Accedi con GitHub',
     'github_signup' => 'Registrati con GitHub',
     'github_email_unavailable' => 'Impossibile recuperare la tua email da GitHub. Rendi pubblica la tua email GitHub o concedi l\'ambito email, poi riprova.',
+    'authentik_login' => 'Accedi con :provider',
+    'authentik_no_account' => 'Non esiste alcun account TryPost per questa e-mail. Chiedi all\'amministratore di crearne uno.',
+    'authentik_failed' => 'Impossibile accedere con :provider. Riprova.',
 
     'login' => [
         'title' => 'Accedi al tuo account',

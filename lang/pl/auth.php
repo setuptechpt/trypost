@@ -58,6 +58,9 @@ return [
     'github_login' => 'Zaloguj się przez GitHub',
     'github_signup' => 'Zarejestruj się przez GitHub',
     'github_email_unavailable' => 'Nie udało się pobrać Twojego adresu e-mail z GitHuba. Ustaw swój adres e-mail w GitHubie jako publiczny lub przyznaj uprawnienie do e-maila, a następnie spróbuj ponownie.',
+    'authentik_login' => 'Zaloguj się przez :provider',
+    'authentik_no_account' => 'Dla tego adresu e-mail nie istnieje konto TryPost. Poproś administratora o jego utworzenie.',
+    'authentik_failed' => 'Nie udało się zalogować przez :provider. Spróbuj ponownie.',
 
     'login' => [
         'title' => 'Zaloguj się na swoje konto',

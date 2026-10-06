@@ -60,6 +60,9 @@ return [
     'github_login' => 'Mit GitHub anmelden',
     'github_signup' => 'Mit GitHub registrieren',
     'github_email_unavailable' => 'Deine E-Mail-Adresse konnte nicht von GitHub abgerufen werden. Mache deine GitHub-E-Mail-Adresse öffentlich oder erteile die Berechtigung für den E-Mail-Zugriff und versuche es dann erneut.',
+    'authentik_login' => 'Mit :provider anmelden',
+    'authentik_no_account' => 'Für diese E-Mail-Adresse existiert kein TryPost-Konto. Bitte deinen Administrator, eines anzulegen.',
+    'authentik_failed' => 'Die Anmeldung mit :provider ist fehlgeschlagen. Bitte versuche es erneut.',
 
     'login' => [
         'title' => 'Melde dich bei deinem Konto an',

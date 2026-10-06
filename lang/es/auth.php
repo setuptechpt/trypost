@@ -46,6 +46,9 @@ return [
     'github_login' => 'Iniciar sesión con GitHub',
     'github_signup' => 'Registrarse con GitHub',
     'github_email_unavailable' => 'No fue posible obtener tu correo de GitHub. Haz tu correo público en GitHub o concede el permiso de correo y vuelve a intentar.',
+    'authentik_login' => 'Iniciar sesión con :provider',
+    'authentik_no_account' => 'No existe ninguna cuenta de TryPost para este correo. Pide a tu administrador que cree una.',
+    'authentik_failed' => 'No pudimos iniciar tu sesión con :provider. Inténtalo de nuevo.',
 
     'login' => [
         'title' => 'Inicia sesión en tu cuenta',

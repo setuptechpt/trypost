@@ -58,6 +58,9 @@ return [
     'github_login' => '使用 GitHub 登录',
     'github_signup' => '使用 GitHub 注册',
     'github_email_unavailable' => '无法从 GitHub 获取你的邮箱。请将你的 GitHub 邮箱设为公开，或授予邮箱权限后重试。',
+    'authentik_login' => '使用 :provider 登录',
+    'authentik_no_account' => '此邮箱没有对应的 TryPost 账户。请联系管理员创建账户。',
+    'authentik_failed' => '无法使用 :provider 登录，请重试。',
 
     'login' => [
         'title' => '登录你的账户',
