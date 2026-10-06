@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Form, Head, usePage } from '@inertiajs/vue3';
-import { IconDeviceDesktop, IconDeviceMobile } from '@tabler/icons-vue';
+import { IconDeviceDesktop, IconDeviceMobile, IconKey } from '@tabler/icons-vue';
 import { trans } from 'laravel-vue-i18n';
 import { computed, ref } from 'vue';
 
@@ -38,7 +38,7 @@ type Session = {
     is_current: boolean;
 };
 
-type SocialProvider = 'google' | 'github';
+type SocialProvider = 'google' | 'github' | 'authentik';
 
 type ConnectedAccount = {
     provider: SocialProvider;
@@ -76,7 +76,7 @@ const logoutDialogOpen = ref(false);
 
 const page = usePage();
 const providerEnabled = (provider: SocialProvider): boolean =>
-    Boolean(page.props[provider === 'google' ? 'googleAuthEnabled' : 'githubAuthEnabled']);
+    Boolean(page.props[`${provider}AuthEnabled`]);
 </script>
 
 <template>
@@ -290,7 +290,9 @@ const providerEnabled = (provider: SocialProvider): boolean =>
                             :data-test="`connected-account-${account.provider}`"
                         >
                             <div class="inline-flex size-10 rotate-1 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-foreground bg-card shadow-2xs">
+                                <IconKey v-if="account.provider === 'authentik'" class="size-5" />
                                 <img
+                                    v-else
                                     :src="`/images/social/${account.provider}.svg`"
                                     :alt="account.label"
                                     class="size-6"

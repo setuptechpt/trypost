@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { usePage } from '@inertiajs/vue3';
+import { IconKey } from '@tabler/icons-vue';
 import { computed } from 'vue';
 
 import { Button } from '@/components/ui/button';
+import { redirect as authentikRedirect } from '@/routes/auth/authentik';
 import { redirect as githubRedirect } from '@/routes/auth/github';
 import { redirect as googleRedirect } from '@/routes/auth/google';
 
@@ -18,7 +20,9 @@ const props = withDefaults(
 const page = usePage();
 const googleEnabled = computed(() => Boolean(page.props.googleAuthEnabled));
 const githubEnabled = computed(() => Boolean(page.props.githubAuthEnabled));
-const hasSocial = computed(() => googleEnabled.value || githubEnabled.value);
+// Authentik only signs in existing accounts, so it never shows on signup.
+const authentikEnabled = computed(() => props.mode === 'login' && Boolean(page.props.authentikAuthEnabled));
+const hasSocial = computed(() => googleEnabled.value || githubEnabled.value || authentikEnabled.value);
 
 const query = computed(() => {
     const params: Record<string, string> = {};
@@ -28,6 +32,7 @@ const query = computed(() => {
 
 const googleUrl = computed(() => googleRedirect.url({ query: query.value }));
 const githubUrl = computed(() => githubRedirect.url({ query: query.value }));
+const authentikUrl = computed(() => authentikRedirect.url({ query: query.value }));
 </script>
 
 <template>
@@ -41,6 +46,11 @@ const githubUrl = computed(() => githubRedirect.url({ query: query.value }));
             <Button v-if="githubEnabled" variant="outline" class="w-full" as="a" :href="githubUrl">
                 <img src="/images/social/github.svg" alt="GitHub" class="size-4 dark:invert" />
                 {{ mode === 'login' ? $t('auth.github_login') : $t('auth.github_signup') }}
+            </Button>
+
+            <Button v-if="authentikEnabled" variant="outline" class="w-full" as="a" :href="authentikUrl">
+                <IconKey class="size-4" />
+                {{ $t('auth.authentik_login', { provider: String(page.props.authentikAuthLabel) }) }}
             </Button>
         </div>
 
