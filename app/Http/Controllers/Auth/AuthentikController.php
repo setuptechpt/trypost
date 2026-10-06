@@ -67,7 +67,8 @@ class AuthentikController extends Controller
     }
 
     /**
-     * Linking by email is only safe when the IdP vouches for the address.
+     * Linking by email is only safe when the IdP vouches for the address and
+     * the account is not yet bound to an Authentik identity.
      */
     private function findByVerifiedEmail(SocialUser $authentikUser): ?User
     {
@@ -77,7 +78,10 @@ class AuthentikController extends Controller
             return null;
         }
 
-        return User::whereRaw('LOWER(email) = ?', [mb_strtolower($email)])->first();
+        // An account already bound to another Authentik identity is never taken over by email.
+        return User::whereRaw('LOWER(email) = ?', [mb_strtolower($email)])
+            ->whereNull('authentik_id')
+            ->first();
     }
 
     private function connectToCurrentUser(User $user, string $authentikId): RedirectResponse
