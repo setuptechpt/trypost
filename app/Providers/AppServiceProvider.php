@@ -57,6 +57,7 @@ use Laravel\Nightwatch\Records\CacheEvent;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\GoogleProvider;
 use PostHog\PostHog;
+use SocialiteProviders\Authentik\AuthentikExtendSocialite;
 use SocialiteProviders\Facebook\FacebookExtendSocialite;
 use SocialiteProviders\LinkedIn\LinkedInExtendSocialite;
 use SocialiteProviders\Manager\SocialiteWasCalled;
@@ -202,6 +203,7 @@ class AppServiceProvider extends ServiceProvider
             return Socialite::buildProvider(DiscordProvider::class, $config);
         });
 
+        Event::listen(SocialiteWasCalled::class, AuthentikExtendSocialite::class);
         Event::listen(SocialiteWasCalled::class, FacebookExtendSocialite::class);
         Event::listen(SocialiteWasCalled::class, LinkedInExtendSocialite::class);
         Event::listen(SocialiteWasCalled::class, LinkedInPageExtendSocialite::class);

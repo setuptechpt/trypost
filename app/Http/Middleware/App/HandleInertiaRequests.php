@@ -72,6 +72,8 @@ class HandleInertiaRequests extends Middleware
             'allowMultipleSocialAccounts' => (bool) config('trypost.allow_multiple_social_accounts'),
             'googleAuthEnabled' => SocialAuthProvider::Google->isEnabled(),
             'githubAuthEnabled' => SocialAuthProvider::GitHub->isEnabled(),
+            'authentikAuthEnabled' => SocialAuthProvider::Authentik->isEnabled(),
+            'authentikAuthLabel' => SocialAuthProvider::Authentik->label(),
         ];
     }
 

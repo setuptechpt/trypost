@@ -157,6 +157,10 @@ return [
 
     'github_auth_enabled' => env('GITHUB_AUTH_ENABLED', false),
 
+    'authentik_auth_enabled' => env('AUTHENTIK_AUTH_ENABLED', false),
+
+    'authentik_auth_label' => env('AUTHENTIK_AUTH_LABEL', 'Authentik'),
+
     /*
     |--------------------------------------------------------------------------
     | Social Platforms

@@ -37,6 +37,7 @@ class User extends Authenticatable implements MustVerifyEmail, OAuthenticatable
         'password',
         'google_id',
         'github_id',
+        'authentik_id',
         'account_id',
         'current_workspace_id',
         'email_verified_at',

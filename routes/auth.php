@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\Auth\AcceptInviteController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\AuthentikController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\GitHubController;
@@ -33,6 +34,7 @@ Route::middleware(['guest'])->group(function () {
 
     Route::get('/auth/google/redirect', [GoogleController::class, 'redirect'])->name('auth.google.redirect');
     Route::get('/auth/github/redirect', [GitHubController::class, 'redirect'])->name('auth.github.redirect');
+    Route::get('/auth/authentik/redirect', [AuthentikController::class, 'redirect'])->name('auth.authentik.redirect');
 });
 
 // Callbacks must be reachable by both guests (signup/login) and authenticated
@@ -41,6 +43,7 @@ Route::middleware(['guest'])->group(function () {
 // on `Auth::check()` to dispatch to the matching flow.
 Route::get('/auth/google/callback', [GoogleController::class, 'callback'])->name('auth.google.callback');
 Route::get('/auth/github/callback', [GitHubController::class, 'callback'])->name('auth.github.callback');
+Route::get('/auth/authentik/callback', [AuthentikController::class, 'callback'])->name('auth.authentik.callback');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/verify-email', EmailVerificationPromptController::class)->name('verification.notice');

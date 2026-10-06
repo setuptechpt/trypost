@@ -8,12 +8,14 @@ enum SocialAuthProvider: string
 {
     case Google = 'google';
     case GitHub = 'github';
+    case Authentik = 'authentik';
 
     public function label(): string
     {
         return match ($this) {
             self::Google => 'Google',
             self::GitHub => 'GitHub',
+            self::Authentik => (string) config('trypost.authentik_auth_label'),
         };
     }
 

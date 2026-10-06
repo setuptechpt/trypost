@@ -72,6 +72,7 @@ class AuthenticationController extends Controller
         return match ($socialProvider) {
             SocialAuthProvider::Google => Socialite::driver('google-auth')->redirect(),
             SocialAuthProvider::GitHub => Socialite::driver('github')->scopes(['read:user', 'user:email'])->redirect(),
+            SocialAuthProvider::Authentik => Socialite::driver('authentik')->setScopes(['openid', 'email', 'profile'])->redirect(),
         };
     }
 
@@ -126,12 +127,17 @@ class AuthenticationController extends Controller
      */
     private function getConnectedAccounts(User $user): array
     {
-        return collect(SocialAuthProvider::cases())->map(fn (SocialAuthProvider $provider) => [
-            'provider' => $provider->value,
-            'label' => $provider->label(),
-            'connected' => $user->isConnectedTo($provider),
-            'can_disconnect' => $user->isConnectedTo($provider) && $this->canDisconnect($user, $provider),
-        ])->values()->all();
+        // Authentik is opt-in per install: hide it unless enabled or already linked.
+        return collect(SocialAuthProvider::cases())
+            ->reject(fn (SocialAuthProvider $provider) => $provider === SocialAuthProvider::Authentik
+                && ! $provider->isEnabled()
+                && ! $user->isConnectedTo($provider))
+            ->map(fn (SocialAuthProvider $provider) => [
+                'provider' => $provider->value,
+                'label' => $provider->label(),
+                'connected' => $user->isConnectedTo($provider),
+                'can_disconnect' => $user->isConnectedTo($provider) && $this->canDisconnect($user, $provider),
+            ])->values()->all();
     }
 
     private function canDisconnect(User $user, SocialAuthProvider $provider): bool

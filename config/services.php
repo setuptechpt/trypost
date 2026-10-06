@@ -82,6 +82,14 @@ return [
         'redirect' => env('GITHUB_AUTH_CALLBACK'),
     ],
 
+    // Authentik OIDC (used for login only, never registration)
+    'authentik' => [
+        'base_url' => env('AUTHENTIK_BASE_URL'),
+        'client_id' => env('AUTHENTIK_CLIENT_ID'),
+        'client_secret' => env('AUTHENTIK_CLIENT_SECRET'),
+        'redirect' => env('AUTHENTIK_AUTH_CALLBACK'),
+    ],
+
     // Facebook Pages
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
